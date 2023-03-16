@@ -22,10 +22,10 @@ public class TestListExamples {
 
   @Test(timeout = 500)
   public void testMergeLeftEnd() {
-    List<String> left = Arrays.asList("a", "c", "z");
+    List<String> left = Arrays.asList("a", "b", "b");
     List<String> right = Arrays.asList("b", "d");
     List<String> merged = ListExamples.merge(left, right);
-    List<String> expected = Arrays.asList("a", "b", "c", "d", "z");
+    List<String> expected = Arrays.asList("a", "b", "b","b", "d");
     assertEquals(expected, merged);
   }
 

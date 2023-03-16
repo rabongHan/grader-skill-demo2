@@ -7,13 +7,13 @@ echo 'Finished cloning'
 if [[ -f student-submission/ListExamples.java ]]
 then
   echo 'ListExamples.java found'
+  cp student-submission/ListExamples.java ./
 else
-  echo 'ListExamples.java not found'
-  echo 'Score: 0/4'
-  exit 1
+  echo 'ListExamples.java found in nested directory'
+  FILE_PATH=$(find ./student-submission/ -name "ListExamples.java" -type f)
+  cp $FILE_PATH ./
+  # Name should be not "PATH" --> changing local path (already assigned var name)
 fi
-
-cp student-submission/ListExamples.java ./
 
 javac -cp $CPATH *.java
 
